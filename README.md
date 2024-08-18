@@ -1,6 +1,6 @@
 # LMC (Little Man Computer)
 ### https://lmc.shephardluke.co.uk
-### 2023 A Level Computer Science Project
+### 2023 A Level Computer Science Project (Result A*)
 
 
 Type code into the big textarea, press compile to turn the words into numeric codes and then press run to watch the program run with animations showing the [Fetch-Decode-Execute](https://en.wikipedia.org/wiki/Instruction_cycle) cycle step by step. 
