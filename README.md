@@ -1,8 +1,9 @@
 # LMC (Little Man Computer)
+### https://lmc.shephardluke.co.uk
 ### 2023 A Level Computer Science Project
-https://en.wikipedia.org/wiki/Little_man_computer
 
-Type code into the big textarea, press compile to turn it into numeric codes and then press run to watch the program run step by step. 
+
+Type code into the big textarea, press compile to turn the words into numeric codes and then press run to watch the program run with animations showing the [Fetch-Decode-Execute](https://en.wikipedia.org/wiki/Instruction_cycle) cycle step by step. 
 The slider under the run button can be used to adjust the animation speed, the slider at max disables animations for an instant run.
 Code can be saved and loaded in the form of TXT files using the top buttons, and program input is at the bottom right in the textbox with the submit button.
 
@@ -21,3 +22,5 @@ Code can be saved and loaded in the form of TXT files using the top buttons, and
 |902|OUT|
 |000|HLT|
 |XXX|DAT|
+
+For more information check the LMC [Wikipedia](https://en.wikipedia.org/wiki/Little_man_computer) page.
