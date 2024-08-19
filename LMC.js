@@ -73,7 +73,7 @@ const instructionList = [
     return str
   }
   
-  function compileCode() { // when compile button is pressed 
+  function assembleCode() { // when assemble button is pressed 
     resetProgram()
     memory.clear()
     makePointers()
@@ -131,7 +131,7 @@ const instructionList = [
   
     }
     memory.backup = structuredClone(memory.value)
-    displayCompiledCode(memory.value)
+    displayAssembledCode(memory.value)
   }
   
   function runCode() {

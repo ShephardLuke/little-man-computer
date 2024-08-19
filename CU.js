@@ -28,7 +28,7 @@ class CU extends Register {
       text(current, this.x + this.w / 2, this.y + this.h / 2)
   
       textAlign(LEFT, TOP)
-      text(this.context, codeInput.element.offsetWidth + compiledCode.element.offsetWidth + windowWidth * 0.04, windowHeight * 0.96)
+      text(this.context, codeInput.element.offsetWidth + assembledCode.element.offsetWidth + windowWidth * 0.04, windowHeight * 0.96)
     }
   
     findInstruction() {
