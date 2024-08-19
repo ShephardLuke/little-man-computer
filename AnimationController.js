@@ -39,14 +39,11 @@ class AnimationController { // Keeps track of running animations
     let ins = this.animations[0][1]
     let para1 = this.animations[0][2]
     let para2 = this.animations[0][3]
+
     // display context
     switch (ins) {
       case cu.copyRegister:
-        let name = para1.name; 
-        if (para1.constructor.name == "TextBox") { // Input fix
-            name = "Input"
-        }
-        cu.context = "Copying " + name + " contents to " + para2.name
+        cu.context = "Copying " + para1.name + " contents to " + para2.name
         break
       case pc.increment:
         cu.context = "Incrementing PC"

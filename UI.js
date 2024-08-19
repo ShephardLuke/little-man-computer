@@ -1,7 +1,7 @@
 // global variables
-let codeInput, assembledCode, inputBox, outputtedCode // textboxes
+let codeInput, compiledCode, inputBox, outputtedCode // textboxes
 let titleBox, saveCodeButton, loadCodeButton //saving and loading buttons and the title textbox
-let assembleButton, runButton, inputSubmit // buttons
+let compileButton, runButton, inputSubmit // buttons
 let registers, memory, cir, pc, mdr, mar, acc, cu, alu // memory, cu and alu are not registers in real life but in this simulation they act similar.
 
 let speedSlider
@@ -27,8 +27,8 @@ function setupMenuBar() { // all the setup for the top bar
   loadCodeButton = new Button(createButton("Load Code"), "loadCodeButton", loadCode) // loading code
   loadCodeButton.button.class("optionButton")
 
-  assembleButton = new Button(createButton("Assemble"), "assembleButton", assembleCode) // assembles the instructions
-  assembleButton.button.class("menuButton")
+  compileButton = new Button(createButton("Compile"), "compileButton", compileCode) // compiles the instructions
+  compileButton.button.class("menuButton")
 
   runButton = new Button(createButton("Run"), "runButton", runCode) // for actually running the programs
   runButton.button.class("menuButton")
@@ -42,10 +42,10 @@ function setupLMC() { // all the boxes for typing and inputting
   codeInput.element.placeholder = "Enter code here...";
   codeInput.textbox.class("LMCBox")
 
-  assembledCode = new TextBox(createElement("textarea"), "assembledCode")
-  assembledCode.element.readOnly = true;
-  assembledCode.element.placeholder = "Assembled"
-  assembledCode.textbox.class("LMCBox")
+  compiledCode = new TextBox(createElement("textarea"), "compiledCode")
+  compiledCode.element.readOnly = true;
+  compiledCode.element.placeholder = "Compiled"
+  compiledCode.textbox.class("LMCBox")
 
   inputBox = new TextBox(createElement("textarea"), "inputBox")
   inputBox.value = 0
@@ -109,7 +109,7 @@ function sizeMenuBar() {
   saveCodeButton.button.position(titleBox.element.offsetWidth + windowWidth / 35, windowHeight / 75)
   loadCodeButton.button.position(titleBox.element.offsetWidth + windowWidth / 35 + saveCodeButton.element.offsetWidth + windowWidth / 75, windowHeight / 75)
 
-  assembleButton.button.position(windowWidth / 2 - windowWidth * 0.080, windowHeight / 75)
+  compileButton.button.position(windowWidth / 2 - windowWidth * 0.080, windowHeight / 75)
 
   runButton.button.position(windowWidth / 2 + windowWidth * 0.005, windowHeight / 75)
 
@@ -120,7 +120,7 @@ function sizeLMC() {
 
   codeInput.textbox.position(0, windowHeight / 12.5)
 
-  assembledCode.textbox.position(codeInput.element.offsetWidth + windowWidth / 75, windowHeight / 12.5)
+  compiledCode.textbox.position(codeInput.element.offsetWidth + windowWidth / 75, windowHeight / 12.5)
 
   outputtedCode.textbox.position(windowWidth - outputtedCode.element.offsetWidth - windowWidth * 0.02, windowHeight * 0.66)
 
@@ -133,7 +133,7 @@ function sizeLMC() {
 function sizeRegisters() {
   memory.resize(windowWidth - windowWidth * 0.38 - windowWidth * 0.01, windowHeight / 12.5 + windowWidth * 0.01, windowWidth * 0.38, windowHeight * 0.55)
 
-  let x = codeInput.element.offsetWidth + assembledCode.element.offsetWidth + windowWidth * 0.06
+  let x = codeInput.element.offsetWidth + compiledCode.element.offsetWidth + windowWidth * 0.06
   let w = windowWidth * 0.05
   let h = windowHeight * 0.07
   pc.resize(x, windowHeight * 0.16, w, h)
@@ -151,14 +151,14 @@ function sizeRegisters() {
 
 
 
-function displayAssembledCode(valueList) { // turns memory.value into a string to display
+function displayCompiledCode(valueList) { // turns memory.value into a string to display
   let valueString = ""
   let rows = codeInput.element.value.toUpperCase().split("\n") // split codeInput into rows
   for (let i = 0; i < min(rows.length, 100); i++) { // loop for number of rows the user has
     let value = addZeros(valueList[i])
     valueString += value + "\n" // add to big string with new line
   }
-  assembledCode.element.value = valueString // put on webpage
+  compiledCode.element.value = valueString // put on webpage
   memory.update()
 }
 
