@@ -1,5 +1,5 @@
 # LMC (Little Man Computer)
-### https://lmc.shephardluke.co.uk
+### https://little-man-computer.shephardluke.co.uk/
 ### 2023 A Level Computer Science Project (Result A*)
 
 
