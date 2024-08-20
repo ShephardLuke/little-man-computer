@@ -1,7 +1,7 @@
 # LMC (Little Man Computer)
 ### https://little-man-computer.shephardluke.co.uk/
 ### 2023 A Level Computer Science Project (Result A*)
-
+Made using [p5.js](https://p5js.org/)
 
 Type code into the big textarea, press assemble to turn the words into numeric codes and then press run to watch the program run with animations showing the [Fetch-Decode-Execute](https://en.wikipedia.org/wiki/Instruction_cycle) cycle step by step. 
 The slider under the run button can be used to adjust the animation speed, the slider at max disables animations for an instant run.
